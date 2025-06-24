@@ -588,9 +588,9 @@ end
 local function OnReclaimIssued(command)
     -- feature: area commands
     -- -- Area reclaim dragger, command mode only
-    -- if command.Target.EntityId and modeData.name == "RULEUCC_Reclaim" then
-    --     import("/lua/ui/game/hotkeys/area-reclaim-order.lua").AreaReclaimOrder(command)
-    -- end
+     if command.Target.EntityId and modeData.name == "RULEUCC_Reclaim" then
+         import("/lua/ui/game/hotkeys/area-reclaim-order.lua").AreaReclaimOrder(command)
+     end
 end
 
 ---@param command UserCommand
