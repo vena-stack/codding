@@ -1,0 +1,14 @@
+--Emoji_1 = import('/mods/walls/emojis/emoji_1.lua').Template now its change AntiAir
+Emoji_2 = import('/mods/walls/emojis/emoji_2.lua').Template
+Emoji_3 = import('/mods/walls/emojis/emoji_3.lua').Template
+Emoji_4 = import('/mods/walls/emojis/emoji_4.lua').Template
+Emoji_5 = import('/mods/walls/emojis/emoji_5.lua').Template
+Emoji_6 = import('/mods/walls/emojis/emoji_6.lua').Template
+Emoji_7 = import('/mods/walls/emojis/emoji_7.lua').Template
+--Emoji_7 = import('/mods/walls/emojis/emoji_7.lua').Template BROKEN
+Emoji_8 = import('/mods/walls/emojis/emoji_8.lua').Template
+--Emoji_9 = import('/mods/walls/emojis/emoji_9.lua').Template now its change PointDefence
+Emoji_10 = import('/mods/walls/emojis/emoji_10.lua').Template
+Emoji_11 = import('/mods/walls/emojis/emoji_11.lua').Template
+Emoji_12 = import('/mods/walls/emojis/emoji_12.lua').Template
+Emoji_13 = import('/mods/walls/emojis/emoji_13.lua').Template

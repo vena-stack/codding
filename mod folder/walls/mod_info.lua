@@ -1,0 +1,10 @@
+name = "WallsArts"
+version = 2
+copyright = ""
+description = "Wall arts by using hotkey Cycle context templates in Order - Mouse context"
+author = "vena-, kiri"
+url = ""
+uid = "1fd65d80-3797-403b-a5be-827d53325b9f"
+icon = "/mods/walls/icon.png"
+exclusive = false
+ui_only = true
