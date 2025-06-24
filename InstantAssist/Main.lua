@@ -49,7 +49,7 @@ function Main(isReplay)
         return function(command)
             field(command)
 
-            if (command.CommandType == "Guard" or command.CommandType == "Repair") and command.Target.EntityId and
+            if (command.CommandType == "Guard" or command.CommandType == "Repair") and command.Target.EntityId and --where command for tranports? would try add it here
                 command.Clear and command.Units then
                 ---@type UserUnit
                 ---@diagnostic disable-next-line:assign-type-mismatch
