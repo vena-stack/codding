@@ -1,4 +1,5 @@
-
+--there just stupid hook of all code 
+-- next step will be update for "nice look code"
 
 -- performance related imports
 local type = type
