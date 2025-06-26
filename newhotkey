@@ -304,3 +304,13 @@ function SplitLandUnitsByRole()
 
 	end)	
 end
+
+
+
+
+--thats not all so i will add next code soon
+
+    ['goto_engineer'] = {
+        action = 'UI_SelectByCategory +nearest +idle +goto ENGINEER',
+        category = 'selection',
+    },
