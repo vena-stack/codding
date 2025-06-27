@@ -64,8 +64,10 @@ function Main(isReplay)
                 local isStructure = targetUnit:IsInCategory "STRUCTURE"
                 local isMassExtractor = EntityCategoryContains(categories.MASSEXTRACTION * categories.STRUCTURE,
                     targetUnit)
+                local IsTransport = EntityCategoryContains(categories.TRANSPORTATION,
+                    targetUnit)
 
-                if not isStructure or isMassExtractor and fraction >= 1 then
+                if not isStructure or isMassExtractor or IsTransport and fraction >= 1 then
                     return
                 end
 
