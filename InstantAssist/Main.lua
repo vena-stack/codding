@@ -75,16 +75,6 @@ function Main(isReplay)
                 end
 
                 local withInRangeEngineers = {}
-                for _, engy in engineers do
-                    if IsWithinBuildRange(targetUnit, engy) then
-                        table.insert(withInRangeEngineers, engy)
-                    end
-                end
-
-                if table.empty(withInRangeEngineers) then
-                    return
-                end
-
                 ForkThread(function()
                     WaitTicks(1)
                     HiddenSelection(function()
