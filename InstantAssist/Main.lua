@@ -72,8 +72,6 @@ function Main(isReplay)
                 end
 
                 local engineers = EntityCategoryFilterDown(categories.ENGINEER, command.Units)
-                if table.empty(engineers) then
-                    return
                 end
 
                 local withInRangeEngineers = {}
