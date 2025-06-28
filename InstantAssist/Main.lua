@@ -54,11 +54,6 @@ function Main(isReplay)
                 ---@type UserUnit
                 ---@diagnostic disable-next-line:assign-type-mismatch
                 local targetUnit = GetUnitById(command.Target.EntityId)
-
-                if targetUnit == nil then
-                    return
-                end
-
                 local fraction = targetUnit:GetFractionComplete()
 
                 local isStructure = targetUnit:IsInCategory "STRUCTURE"
