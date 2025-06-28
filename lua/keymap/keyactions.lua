@@ -20,6 +20,10 @@ local keyActionsCamera = {
         action = 'UI_Lua import("/lua/keymap/misckeyactions.lua").lockZoom()',
         category = 'camera',
     },
+    ['newhotkey'] = {
+        action = 'UI_Lua import("/lua/keymap/misckeyactions.lua").newfunction()',
+        category = 'camera',
+    },
     ['zoom_pop'] = {
         action = "UI_Lua import('/lua/ui/game/zoompopper.lua').ToggleZoomPop()",
         category = 'camera',
