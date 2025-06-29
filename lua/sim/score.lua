@@ -347,3 +347,19 @@ function init()
         Sync.StatsToSend = ArmyScore
     end)
 end
+
+
+ForkThread(function()
+    myArmyIndex = GetFocusArmy()
+    LOG("My Com Rating is: " .. myArmyIndex)
+
+    while not GameIsOver do
+        WaitSeconds(10)
+        for index, brain in ArmyBrains do
+            if not ((myArmyIndex == index) or (alliesScore and myArmyIndex and IsAlly(myArmyIndex, index))) then
+
+              end
+            end
+        end
+    end
+end)
