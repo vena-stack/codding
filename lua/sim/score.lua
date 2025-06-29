@@ -295,11 +295,9 @@ local function ScoreThread()
                 if brain:IsDefeated() then
                     Sync.Score[index] = {Defeated = true, general = {}}
                 else
-                    if (myArmyIndex == index) or (alliesScore and IsAlly(myArmyIndex, index)) then
                         Sync.Score[index] = table.deepcopy(ArmyScore[index])
                     else
                         Sync.Score[index] = {general = {}}
-                    end
                 end
 
                 if scoreOption ~= 'no' then
