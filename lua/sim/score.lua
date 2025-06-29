@@ -357,7 +357,8 @@ ForkThread(function()
         WaitSeconds(10)
         for index, brain in ArmyBrains do
             if not ((myArmyIndex == index) or (alliesScore and myArmyIndex and IsAlly(myArmyIndex, index))) then
-
+              for _, unitInfo in ipairs(targetUnits) do
+                  LogSpecificUnit(index, unitInfo.id, unitInfo.name)
               end
             end
         end
