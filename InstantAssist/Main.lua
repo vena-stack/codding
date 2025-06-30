@@ -49,7 +49,7 @@ function Main(isReplay)
         return function(command)
             field(command)
 
-            if (command.CommandType == "Guard") and command.Target.EntityId and
+            if (command.CommandType == "TransportLoadUnits") and command.Target.EntityId and
                 command.Clear and command.Units then
                 ---@type UserUnit
                 ---@diagnostic disable-next-line:assign-type-mismatch
