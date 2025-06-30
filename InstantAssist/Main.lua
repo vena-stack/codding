@@ -49,32 +49,36 @@ function Main(isReplay)
         return function(command)
             field(command)
 
-            if (command.CommandType == "Guard" or command.CommandType == "Repair" or command.CommandType == "TransportLoadUnits") and command.Target.EntityId and --now we need put some <if then> stuff or it work 😎
+            if (command.CommandType == "Guard") and command.Target.EntityId and
                 command.Clear and command.Units then
                 ---@type UserUnit
                 ---@diagnostic disable-next-line:assign-type-mismatch
                 local targetUnit = GetUnitById(command.Target.EntityId)
+
+
                 local fraction = targetUnit:GetFractionComplete()
 
                 local isStructure = targetUnit:IsInCategory "STRUCTURE"
                 local isMassExtractor = EntityCategoryContains(categories.MASSEXTRACTION * categories.STRUCTURE,
                     targetUnit)
-                local IsTransport = EntityCategoryContains(categories.TRANSPORTATION,
-                    targetUnit)
 
-                if not isStructure or isMassExtractor or IsTransport and fraction >= 1 then
-                    return
-                end
 
                 local engineers = EntityCategoryFilterDown(categories.ENGINEER, command.Units)
-                end
 
                 local withInRangeEngineers = {}
+                for _, engy in engineers do
+                    if IsWithinBuildRange(targetUnit, engy) then
+                        table.insert(withInRangeEngineers, engy)
+                    end
+                end
+
                 ForkThread(function()
-                    WaitTicks(1)
+                    WaitTicks(25)
                     HiddenSelection(function()
                         SelectUnits(withInRangeEngineers)
                         SimCallback({ Func = 'AbortNavigation', Args = {} }, true)
+                                    WaitTicks(20)
+                                    SimCallback({ Func = 'AbortNavigation', Args = {} }, true)
                     end)
                 end)
             end
