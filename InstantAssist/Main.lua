@@ -73,11 +73,11 @@ function Main(isReplay)
                 end
 
                 ForkThread(function()
-                    WaitTicks(25)
+                    WaitTicks(20)
                     HiddenSelection(function()
                         SelectUnits(withInRangeEngineers)
                         SimCallback({ Func = 'AbortNavigation', Args = {} }, true)
-                                    WaitTicks(20)
+                                    WaitTicks(10)
                                     SimCallback({ Func = 'AbortNavigation', Args = {} }, true)
                     end)
                 end)
