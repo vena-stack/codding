@@ -89,6 +89,7 @@ CopyOrders = function(units, target, clearCommands, doPrint)
     -- inform user and observers
 
     if doPrint and (GetFocusArmy() == brain:GetArmyIndex()) then
+            if zero.queue then
         print(string.format("Copied %d orders", tostring(copiedOrders)))
     end
 end
