@@ -21,7 +21,7 @@
 --******************************************************************************************************
 
 local UnitQueueDataToCommand = import("/lua/sim/commands/shared.lua").UnitQueueDataToCommand
-local PopulateLocation = import("/lua/sim/commands/shared.lua").PopulateLocation
+
 
 ---@type table
 local dummyEmptyTable = {}
