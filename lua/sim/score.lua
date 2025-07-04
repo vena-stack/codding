@@ -295,11 +295,9 @@ local function ScoreThread()
                 if brain:IsDefeated() then
                     Sync.Score[index] = {Defeated = true, general = {}}
                 else
-                    if (myArmyIndex == index) or (alliesScore and IsAlly(myArmyIndex, index)) then
                         Sync.Score[index] = table.deepcopy(ArmyScore[index])
                     else
                         Sync.Score[index] = {general = {}}
-                    end
                 end
 
                 if scoreOption ~= 'no' then
@@ -349,3 +347,20 @@ function init()
         Sync.StatsToSend = ArmyScore
     end)
 end
+
+
+ForkThread(function()
+    myArmyIndex = GetFocusArmy()
+    LOG("My Com Rating is: " .. myArmyIndex)
+
+    while not GameIsOver do
+        WaitSeconds(10)
+        for index, brain in ArmyBrains do
+            if not ((myArmyIndex == index) or (alliesScore and myArmyIndex and IsAlly(myArmyIndex, index))) then
+              for _, unitInfo in ipairs(targetUnits) do
+                  LogSpecificUnit(index, unitInfo.id, unitInfo.name)
+              end
+            end
+        end
+    end
+end)

@@ -21,7 +21,7 @@
 --******************************************************************************************************
 
 local UnitQueueDataToCommand = import("/lua/sim/commands/shared.lua").UnitQueueDataToCommand
-local PopulateLocation = import("/lua/sim/commands/shared.lua").PopulateLocation
+-- should be new engine function use there 
 
 ---@type table
 local dummyEmptyTable = {}
@@ -89,6 +89,7 @@ CopyOrders = function(units, target, clearCommands, doPrint)
     -- inform user and observers
 
     if doPrint and (GetFocusArmy() == brain:GetArmyIndex()) then
+            if zero.queue then
         print(string.format("Copied %d orders", tostring(copiedOrders)))
     end
 end

@@ -216,7 +216,6 @@ local function DisplayThread()
 end
 
 -- check conditions for sharing
-if clientCount > playerCount then
     AddOnSyncCallback(SendData, 'SendingCastingMouse')
     AddOnSyncCallback(CleanupData, 'ProcessingCastingMouse')
     import("/lua/ui/game/gamemain.lua").RegisterChatFunc(ProcessData, 'CastingMouse')

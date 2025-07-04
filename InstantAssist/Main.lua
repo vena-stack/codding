@@ -49,15 +49,12 @@ function Main(isReplay)
         return function(command)
             field(command)
 
-            if (command.CommandType == "Guard" or command.CommandType == "Repair") and command.Target.EntityId and
+            if (command.CommandType == "TransportLoadUnits") and command.Target.EntityId and
                 command.Clear and command.Units then
                 ---@type UserUnit
                 ---@diagnostic disable-next-line:assign-type-mismatch
                 local targetUnit = GetUnitById(command.Target.EntityId)
 
-                if targetUnit == nil then
-                    return
-                end
 
                 local fraction = targetUnit:GetFractionComplete()
 
@@ -65,14 +62,8 @@ function Main(isReplay)
                 local isMassExtractor = EntityCategoryContains(categories.MASSEXTRACTION * categories.STRUCTURE,
                     targetUnit)
 
-                if not isStructure or isMassExtractor and fraction >= 1 then
-                    return
-                end
 
                 local engineers = EntityCategoryFilterDown(categories.ENGINEER, command.Units)
-                if table.empty(engineers) then
-                    return
-                end
 
                 local withInRangeEngineers = {}
                 for _, engy in engineers do
@@ -81,15 +72,13 @@ function Main(isReplay)
                     end
                 end
 
-                if table.empty(withInRangeEngineers) then
-                    return
-                end
-
                 ForkThread(function()
-                    WaitTicks(1)
+                    WaitTicks(20)
                     HiddenSelection(function()
                         SelectUnits(withInRangeEngineers)
                         SimCallback({ Func = 'AbortNavigation', Args = {} }, true)
+                                    WaitTicks(10)
+                                    SimCallback({ Func = 'AbortNavigation', Args = {} }, true)
                     end)
                 end)
             end
