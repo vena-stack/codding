@@ -1,0 +1,16 @@
+name = "EventAlert FAF"
+uid = "0b7fa529-5e51-44dc-b0a5-782f4a6f2625"
+version = 2
+copyright = ""
+description = "Voice and UI alert for key events like detection/destroy of T4, Nuke, T3 Artillery"
+author = "FAoncemore"
+icon = "/mods/EventAlert FAF/EventAlert_icon.png"
+selectable = true
+enabled = true
+exclusive = false
+ui_only = false
+requires = { }
+requiresNames = { }
+conflicts = { }
+before = { }
+after = { }
