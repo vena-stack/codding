@@ -7,7 +7,7 @@
 #**
 #**  Copyright ?2005 Gas Powered Games, Inc.  All rights reserved.
 #****************************************************************************
-
+-- not super smart but working
 local EventAlertUnit = Unit
 Unit = Class(EventAlertUnit) {    
     OnDetectedBy = function(self, index)
