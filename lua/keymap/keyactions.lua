@@ -1681,6 +1681,10 @@ local keyActionsOrdersQueueBased = {
         category = 'ordersQueueBased',
         wikiURL = 'Play/Game/Hotkeys/OrdersQueueManipulation#distribute-orders'
     },
+    ['KeyOrdersZ'] = {
+        action = 'UI_LUA import("/lua/ui/game/hotkeys/customkey.lua").KeyOrderZ()',
+        category = 'ordersQueueBased'
+    },
     ['copy_orders'] = {
         action = 'UI_LUA import("/lua/ui/game/hotkeys/copy-queue.lua").CopyOrders()',
         category = 'ordersQueueBased',
