@@ -418,6 +418,7 @@ function CCofAttack(order, cache)
     cache[1] = CustomHeight.x
     cache[2] = CustomHeight.y
     cache[3] = CustomHeight.z
+    return cache
 end
 
 ---@param a Unit
