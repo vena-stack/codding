@@ -414,6 +414,8 @@ function PopulateLocation(order, cache)
     cache[3] = order.z
     return cache
 end
+function CCofAttack(order, cache)
+end
 
 ---@param a Unit
 ---@param b Unit
