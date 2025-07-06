@@ -415,6 +415,9 @@ function PopulateLocation(order, cache)
     return cache
 end
 function CCofAttack(order, cache)
+    cache[1] = CustomHeight.x
+    cache[2] = CustomHeight.y
+    cache[3] = CustomHeight.z
 end
 
 ---@param a Unit
