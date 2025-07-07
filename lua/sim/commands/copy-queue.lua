@@ -76,7 +76,7 @@ CopyOrders = function(units, target, clearCommands, doPrint)
         local issueOrder = commandInfo.Callback
         if issueOrder then
             if commandName == 'BuildMobile' then
-                issueOrder(units, CCofAttack(CustomHeight, dummyVectorTable), order.blueprintId, dummyEmptyTable)
+                issueOrder(units, CCofAttack(CustomHeight, dummyVectorTable), CustomHeight.blueprintId, dummyEmptyTable)
             else
                 issueOrder(units, order.target or CCofAttack(CustomHeight, dummyVectorTable))
             end
