@@ -109,7 +109,9 @@ function RecallAndSavePreviousCameraPos()
     local currentSettings = currentCamera:SaveSettings()
     table.insert(cameraPositions, 1, currentSettings) 
     currentCamSetting = currentCamSetting + 1
-
+    if cameraPositions[currentCamSetting] then
+        currentCamera:RestoreSettings(cameraPositions[currentCamSetting])
+    else
 
         currentCamSetting = 1
         if cameraPositions[1] then
