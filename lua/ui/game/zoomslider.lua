@@ -106,6 +106,9 @@ function RecallAndSavePreviousCameraPos()
     end
 
     local currentCamera = GetCamera('WorldCamera')
+    local currentSettings = currentCamera:SaveSettings()
+    table.insert(cameraPositions, 1, currentSettings) 
+    currentCamSetting = currentCamSetting + 1
 
 
         currentCamSetting = 1
