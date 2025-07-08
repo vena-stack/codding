@@ -96,7 +96,27 @@ function RemoveCamPos()
     local sound = Sound({Bank = 'Interface', Cue = 'UI_Camera_Delete_Position'})
     PlaySound(sound)
 end
+local scorecount = 0
+function RecallAndSavePreviousCameraPos()
+    scorecount = scorecount + 1
 
+    if scorecount == 2 then
+        scorecount = 0
+        return
+    end
+
+    local currentCamera = GetCamera('WorldCamera')
+
+
+        currentCamSetting = 1
+        if cameraPositions[1] then
+            currentCamera:RestoreSettings(cameraPositions[1])
+        end
+    end
+
+    local sound = Sound({Bank = 'Interface', Cue = 'UI_Camera_Recall_Position'})
+    PlaySound(sound)
+end
 function RecallCameraPos()
     currentCamSetting = currentCamSetting + 1
     if cameraPositions[currentCamSetting] then
